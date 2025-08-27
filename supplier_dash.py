@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Modern Supplier Dashboard - Tkinter + SQLite
-Author: Damian Damjanovic (assisted by M365 Copilot)
+Author: Damian Damjanovic
 Description:
   - Dark "Tokyo Night" themed dashboard with left stats and right data table
   - Full CRUD via dialogs
@@ -803,7 +803,6 @@ class SupplierDialog(Toplevel):
         if addr:
             addr.configure(width=50)
 
-        # Buttons
         btns = ttk.Frame(frm, padding=(0, 12))
         btns.grid(row=r+2, column=0, columnspan=4, sticky=E+W, pady=(12,0))
         btns.columnconfigure(0, weight=1)
@@ -896,23 +895,6 @@ class ColumnDialog(Toplevel):
         if self.on_apply:
             self.on_apply(result)
         self.destroy()
-
-# ---------------------- Context Menu Helper ---------------------- #
-
-# class tkinter_context_menu:
-#     def __init__(self, widget, items):
-#         self.widget = widget
-#         self.menu = ttk.Menu(widget, tearoff=0)
-#         for label, cmd in items:
-#             self.menu.add_command(label=label, command=cmd)
-
-#     def show(self, event):
-#         try:
-#             self.menu.tk_popup(event.x_root, event.y_root)
-#         finally:
-#             self.menu.grab_release()
-
-# ---------------------- Context Menu Helper ---------------------- #
 
 class tkinter_context_menu:
     def __init__(self, widget, items):
